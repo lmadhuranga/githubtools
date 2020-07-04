@@ -25,7 +25,7 @@ filename='Changelog.md'
 date >> $filename
 echo "Linked " >> $filename
 
-git commit add . && git commit -am " :tada: init :balloon:"
+git commit -am " :tada: init :balloon:"
 
 git push origin $dashedString
 
