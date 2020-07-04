@@ -44,3 +44,5 @@ noDashedString=$(sed "s/_/ /g" <<< $str)
 git push origin $currentBranch
 
 gh pr create -t "$noDashedString ${emjArr[emojiType]}" -b "Linked :link: branch $currentBranch"
+
+gh pr view --web
