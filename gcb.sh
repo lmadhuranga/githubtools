@@ -23,7 +23,9 @@ git checkout -b $dashedString
 
 filename='Changelog.md'
 date >> $filename
-echo "Linked " >> $filename
+echo "Linked $dashedString" >> $filename
+
+git add .
 
 git commit -am " :tada: init :balloon:"
 
