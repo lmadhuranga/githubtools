@@ -38,6 +38,9 @@ emojiType=${emojiType:-0}
 
 currentBranch=$(git branch --show-current)
 
+# convert to space to dash
+noDashedString=$(sed "s/_/ /g" <<< $str)
+
 git push origin $currentBranch
 
-gh pr create -t "$currentBranch ${emojiType}" -b "Linked :link: branch $currentBranch"
+gh pr create -t "$noDashedString ${emjArr[emojiType]}" -b "Linked :link: branch $currentBranch"
