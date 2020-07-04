@@ -1,24 +1,14 @@
-# type of commit
-echo "2 hammer"
-read -p 'feature -> 1 : (0 bug) :' type
+# # type of commit
+emjArr=( [0]=':bug:' [1]=':bulb:' [2]=':hammer:' [3]=':moneybag:' [4]=':star:' [5]=':fire:' [6]=':cloud:' [7]=':snowflake:' [8]=':volcano:', [9]=':heavy_check_mark:' )
 
-# default value set
-env=${type:-0}
- 
-# production or test
-if [ "$type" == 0 ]
-then
-  type=':bug: '
-elif [ "$type" == 1 ]
-then
-  type=':bulb:'
-elif [ "$type" == 2 ]
-then
-  type=':hammer:'
-else
-  type=':moneybag:'
-fi
+for i in "${!emjArr[@]}"; do
+   echo "$i  ${emjArr[$i]}";
+done
 
+read -p '(0 bug) :' type
+
+# default value set 
+type=${type:-0} 
 
 # read input
 read -p 'Commit Msg: ' msg
@@ -32,6 +22,17 @@ fi
 
 git add .
 
-git commit -am "${type} ${msg}"
+fGitMsg="${emjArr[type]} ${msg}"
 
-git push origin $(git branch --show-current)
+printf " \n * * * Commit Message * * * \n \n " 
+echo $fGitMsg
+
+git commit -am "${fGitMsg}"
+
+cbranch=$(git branch --show-current)
+
+printf " \n * * * push to remote/$cbranch * * * \n \n " 
+
+git push origin $cbranch
+
+printf " \n * * * Git commit completed ! * * * \n \n " 
