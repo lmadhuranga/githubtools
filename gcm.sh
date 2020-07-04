@@ -29,3 +29,5 @@ fi
 git add .
 
 git commit -am "${type} ${msg}"
+
+git push origin $(git branch --show-current)
