@@ -24,15 +24,15 @@ git add .
 
 fGitMsg="${emjArr[type]} ${msg}"
 
-printf " \n * * * Commit Message * * * \n " 
+printf " \n * * * Commit Message * * * \n \n " 
 echo $fGitMsg
 
 git commit -am "${fGitMsg}"
 
 cbranch=$(git branch --show-current)
 
-printf " \n * * * push to remote/$cbranch * * * \n " 
+printf " \n * * * push to remote/$cbranch * * * \n \n " 
 
 git push origin $cbranch
 
-printf " \n * * * Process end * * * \n " 
+printf " \n * * * Process end * * * \n \n " 
