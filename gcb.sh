@@ -37,7 +37,7 @@ emojiType=${emojiType:-0}
 
 printf " \n \n "
 # read input
-read -p 'String to dash String: ' str
+read -p 'Branch Name: ' str
 
 str=${str:-0} 
 
@@ -76,10 +76,10 @@ echo "Linked $dashedString -> $(date) " >> $filename
 
 git add .
 
-git commit -am " :tada: init ${emjArr[$emojiType]}"
+git commit -am " :tada: init ${emjArr[emojiType]}"
 
 git push origin $dashedString
 
-gh pr create -t "$str $emjArr[$emojiType]" -b "Linked :link: branch $dashedString"
+gh pr create -t "$str $emjArr[emojiType]" -b "Linked :link: branch $dashedString"
 
 gh pr view --web
