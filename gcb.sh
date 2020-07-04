@@ -76,7 +76,7 @@ echo "Linked $dashedString -> $(date) " >> $filename
 
 git add .
 
-git commit -am " :tada: init $emjArr[$emojiType]"
+git commit -am " :tada: init ${emjArr[$emojiType]}"
 
 git push origin $dashedString
 
