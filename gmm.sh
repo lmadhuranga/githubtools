@@ -19,6 +19,8 @@ then
   git push origin master
 else
   echo "Abort the merge and go to web and rebase from ther"
+  
   gh pr view --web
+  
   exit 
 fi
