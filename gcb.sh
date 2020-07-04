@@ -68,3 +68,5 @@ git commit -am " :tada: init $emjArr[emojiType]"
 git push origin $dashedString
 
 gh pr create -t "$str $emjArr[emojiType]" -b "Linked :link: branch $dashedString"
+
+gh pr view --web
