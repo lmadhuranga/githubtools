@@ -21,6 +21,12 @@ git pull origin master
 
 git checkout -b $dashedString
 
+filename='Changelog.md'
+date >> $filename
+echo "Linked " >> $filename
+
+git commit add . && git commit -am " :tada: init :balloon:"
+
 git push origin $dashedString
 
-gh pr create -t "$str" -b"Linked this branch $dashedString"
+gh pr create -t "$str" -b "Linked :link: branch $dashedString"
