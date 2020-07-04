@@ -1,4 +1,5 @@
 # type of commit
+echo "2 hammer"
 read -p 'feature -> 1 : (0 bug) :' type
 
 # default value set
@@ -11,6 +12,9 @@ then
 elif [ "$type" == 1 ]
 then
   type=':bulb:'
+elif [ "$type" == 2 ]
+then
+  type=':hammer:'
 else
   type=':moneybag:'
 fi
