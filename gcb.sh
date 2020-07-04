@@ -21,9 +21,8 @@ git pull origin master
 
 git checkout -b $dashedString
 
-filename='Changelog.md'
-date >> $filename
-echo "Linked $dashedString" >> $filename
+filename='Changelog.md' 
+echo "Linked $dashedString -> $(date) " >> $filename
 
 git add .
 
