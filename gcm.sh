@@ -1,4 +1,4 @@
-# # type of commit
+# # emojiType of commit
 emjArr=(
    [0]=':bug:'
    [1]=':bulb:'
@@ -30,10 +30,10 @@ for i in "${!emjArr[@]}"; do
    echo "$i  ${emjArr[$i]}";
 done
 
-read -p '(0 bug) :' type
+read -p '(0 bug) :' emojiType
 
 # default value set 
-type=${type:-0} 
+emojiType=${emojiType:-0} 
 
 # read input
 read -p 'Commit Msg: ' msg
@@ -47,7 +47,7 @@ fi
 
 git add .
 
-fGitMsg="${emjArr[type]} ${msg}"
+fGitMsg="${emjArr[$emojiType]} ${msg}"
 
 printf " \n * * * Commit Message * * * \n \n " 
 
