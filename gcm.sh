@@ -35,4 +35,4 @@ printf " \n * * * push to remote/$cbranch * * * \n \n "
 
 git push origin $cbranch
 
-printf " \n * * * Process end * * * \n \n " 
+printf " \n * * * Git commit completed ! * * * \n \n " 
