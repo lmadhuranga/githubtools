@@ -15,8 +15,10 @@ dashedString=$(sed "s/ /_/g" <<< $str)
 
 git stash 
 
-git checkout master  && git pull origin master
+git checkout master 
 
-git checkout -b dashedString
+# git pull origin master
+
+git checkout -b $dashedString
 
 # git push origin dashedString
