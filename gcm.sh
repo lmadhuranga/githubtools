@@ -50,6 +50,7 @@ git add .
 fGitMsg="${emjArr[type]} ${msg}"
 
 printf " \n * * * Commit Message * * * \n \n " 
+
 echo $fGitMsg
 
 git commit -am "${fGitMsg}"
