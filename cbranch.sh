@@ -17,8 +17,8 @@ git stash
 
 git checkout master 
 
-# git pull origin master
+git pull origin master
 
 git checkout -b $dashedString
 
-# git push origin dashedString
+git push origin $dashedString
