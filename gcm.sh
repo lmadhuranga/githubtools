@@ -1,7 +1,6 @@
 # type of commit
 read -p 'feature -> 1 : (0 bug) :' type
 
-
 # default value set
 env=${type:-0}
  
@@ -18,7 +17,7 @@ fi
 
 
 # read input
-read -p 'String to dash String: ' msg
+read -p 'Commit Msg: ' msg
 
 # Commit and push
 if [ "$msg" == 0 ]
