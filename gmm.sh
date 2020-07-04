@@ -1,11 +1,23 @@
 currentBranch=$(git branch --show-current)
 
-git push origin $currentBranch
+read -p " ! Merge to Master $currentBranch  yes 1 ( no 0 ) : " type
 
-git checkout master
+# default value set
+env=${type:-0}
+ 
+# production or test
+if [ "$type" == 1 ]
+then 
+  git push origin $currentBranch
 
-git pull origin master 
+  git checkout master
 
-git merge $currentBranch
+  git pull origin master 
 
-git push origin master 
+  git merge $currentBranch
+
+  git push origin master
+else
+  echo "Abort the merge with"
+  exit 
+fi
