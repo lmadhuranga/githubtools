@@ -52,9 +52,17 @@ dashedString=$(sed "s/ /_/g" <<< $str)
 
 git stash 
 
-git checkout master 
+read -p 'Create branch current 1 (0 from master) :' fromBranch
 
-git pull origin master
+# default value set 
+fromBranch=${fromBranch:-0} 
+
+if [ "$fromBranch" == 0 ]
+then 
+   git checkout master  
+
+   git pull origin master
+fi
 
 git checkout -b $dashedString
 
