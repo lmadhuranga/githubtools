@@ -22,3 +22,5 @@ git pull origin master
 git checkout -b $dashedString
 
 git push origin $dashedString
+
+gh pr create -t "$str" -b"Linked this branch $dashedString"
