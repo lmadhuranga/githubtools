@@ -35,6 +35,8 @@ read -p '(0 bug) :' emojiType
 # default value set 
 emojiType=${emojiType:-0} 
 
+slectedEmoji=${emjArr[$emojiType]}
+
 printf " \n \n "
 # read input
 read -p 'Branch Name: ' str
@@ -76,10 +78,10 @@ echo "Linked $dashedString -> $(date) " >> $filename
 
 git add .
 
-git commit -am " :tada: init ${emjArr[emojiType]}"
+git commit -am " :tada: init $slectedEmoji"
 
 git push origin $dashedString
 
-gh pr create -t "$str $emjArr[emojiType]" -b "Linked :link: branch $dashedString"
+gh pr create -t "$str $slectedEmoji" -b "Linked :link: branch $dashedString"
 
 gh pr view --web

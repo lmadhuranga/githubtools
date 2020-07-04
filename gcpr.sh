@@ -35,6 +35,8 @@ read -p '(0 bug) :' emojiType
 # default value set 
 emojiType=${emojiType:-0} 
 
+slectedEmoji=${emjArr[$emojiType]}
+
 
 currentBranch=$(git branch --show-current)
 
@@ -43,6 +45,6 @@ noDashedString=$(sed "s/_/ /g" <<< $str)
 
 git push origin $currentBranch
 
-gh pr create -t "$noDashedString ${emjArr[$emojiType]}" -b "Linked :link: branch $currentBranch"
+gh pr create -t "$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch"
 
 gh pr view --web

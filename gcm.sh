@@ -35,6 +35,9 @@ read -p '(0 bug) :' emojiType
 # default value set 
 emojiType=${emojiType:-0} 
 
+
+slectedEmoji=${emjArr[$emojiType]}
+
 # read input
 read -p 'Commit Msg: ' msg
 
@@ -45,15 +48,13 @@ then
    exit
 fi
 
-git add .
-
-fGitMsg="${emjArr[$emojiType]} ${msg}"
+git add . 
 
 printf " \n * * * Commit Message * * * \n \n " 
 
 echo $fGitMsg
 
-git commit -am "${fGitMsg}"
+git commit -am "$slectedEmoji ${msg}"
 
 cbranch=$(git branch --show-current)
 
