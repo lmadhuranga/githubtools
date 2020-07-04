@@ -52,7 +52,7 @@ dashedString=$(sed "s/ /_/g" <<< $str)
 
 git stash 
 
-read -p 'Create branch current 1 (0 from master) :' fromBranch
+read -p 'Create from branch current 1 (0 from master) :' fromBranch
 
 # default value set 
 fromBranch=${fromBranch:-0} 
