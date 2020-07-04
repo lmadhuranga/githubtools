@@ -35,6 +35,7 @@ read -p '(0 bug) :' emojiType
 # default value set 
 emojiType=${emojiType:-0} 
 
+printf " \n \n "
 # read input
 read -p 'String to dash String: ' str
 
@@ -43,6 +44,7 @@ str=${str:-0}
 # Commit and push
 if [ "$str" == 0 ]
 then 
+   printf " \n \n "
    echo "Please provide name for branch"
    exit
 fi
@@ -51,6 +53,8 @@ fi
 dashedString=$(sed "s/ /_/g" <<< $str)
 
 git stash 
+
+printf " \n \n "
 
 read -p 'Create from branch current 1 (0 from master) :' fromBranch
 
@@ -67,6 +71,7 @@ fi
 git checkout -b $dashedString
 
 filename='Changelog.md' 
+printf " \n \n "
 echo "Linked $dashedString -> $(date) " >> $filename
 
 git add .
