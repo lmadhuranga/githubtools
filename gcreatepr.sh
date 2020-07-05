@@ -37,7 +37,6 @@ emojiType=${emojiType:-0}
 
 slectedEmoji=${emjArr[$emojiType]}
 
-
 currentBranch=$(git branch --show-current)
 
 # convert to space to dash
