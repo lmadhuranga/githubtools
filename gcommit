@@ -12,6 +12,8 @@ emjArr=(
    [9]=':heavy_check_mark:'
    [10]=':ghost:'
    [11]=':pushpin:'
+   [12]=':black_nib:'
+   [13]=':pencil:'
    ['bug']=':bug:'
    ['idea']=':bulb:'
    ['fix']=':hammer:'
@@ -24,6 +26,8 @@ emjArr=(
    ['check']=':heavy_check_mark:'
    ['ghost']=':ghost:'
    ['pin']=':pushpin:'
+   ['pen']=':black_nib:'
+   ['pencil']=':pencil2:'
 )
 
 for i in "${!emjArr[@]}"; do

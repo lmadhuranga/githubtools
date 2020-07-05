@@ -14,6 +14,8 @@ emjArr7=(
   ['s9']=':heavy_check_mark:'
   ['s10']=':ghost:'
   ['s11']=':pushpin:'
+  ['s11']=':black_nib:'
+  ['s11']=':pencil:'
   ['sbug']=':bug:'
   ['sidea']=':bulb:'
   ['sfix']=':hammer:'
@@ -26,6 +28,8 @@ emjArr7=(
   ['scheck']=':heavy_check_mark:'
   ['sghost']=':ghost:'
   ['sfix']=':pushpin:'
+  ['spen']=':black_nib:'
+  ['spencil']=':pencil:'
 )
 
 str=$1
