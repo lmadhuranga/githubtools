@@ -28,6 +28,7 @@ emjArr7=(
   ['scheck']=':heavy_check_mark:'
   ['sghost']=':ghost:'
   ['sfix']=':pushpin:'
+  ['spin']=':pushpin:'
   ['spen']=':black_nib:'
   ['spencil']=':pencil:'
 )
