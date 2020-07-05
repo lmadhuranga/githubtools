@@ -16,3 +16,5 @@ Need to done
   - label 
   - project name
   - milestone
+- Need to update feature list in read me file
+- Update example of commands
