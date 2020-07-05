@@ -40,7 +40,7 @@ slectedEmoji=${emjArr[$emojiType]}
 currentBranch=$(git branch --show-current)
 
 # convert to space to dash
-noDashedString=$(sed "s/_/ /g" <<< $str)
+noDashedString=$(sed "s/_/ /g" <<< $currentBranch)
 
 git push origin $currentBranch
 
