@@ -52,9 +52,13 @@ git add .
 
 printf " \n * * * Commit Message * * * \n \n " 
 
-echo $fGitMsg
+echo "msg :$msg"
 
-git commit -am "$slectedEmoji ${msg}"
+replacedText=$(source ./emojiReplacer.sh "$msg")
+
+echo "replacedText :$replacedText"
+
+git commit -am "$slectedEmoji ${replacedText}"
 
 cbranch=$(git branch --show-current)
 
