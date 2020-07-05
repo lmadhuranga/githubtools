@@ -30,6 +30,8 @@ emjArr7=(
 
 str=$1
 
+echo "$1 -> $1"
+
 for index in "${!emjArr7[@]}"
 do
   str=$(sed 's/'"${index}"'/'"${emjArr7[$index]}"'/g'  <<< $str)
