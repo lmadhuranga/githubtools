@@ -1,5 +1,5 @@
 # read input
-read -p 'Master 0 (Current 0) ' branchName
+read -p 'Master 1 (Current 0) ' branchName
 
 branchName=${branchName:-0}
 
