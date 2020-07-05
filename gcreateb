@@ -94,6 +94,8 @@ git commit -am " :tada: init $slectedEmoji"
 
 git push origin $branchName
 
-gh pr create -t "$nextPrId.$str $slectedEmoji" -b "Linked :link: branch $branchName" -a "$(git config user.name)"
+hub pull-request hub pull-request -m "$nextPrId.$str $slectedEmoji" -d -a "$(git config user.name)" -l bug -M 'v1.beta'
+
+# gh pr create -t "$nextPrId.$str $slectedEmoji" -b "Linked :link: branch $branchName" -a "$(git config user.name)"
 
 gh pr view --web
