@@ -1,15 +1,15 @@
 # read input
-read -p 'Current 1 (Master 0) ' branchName
+read -p 'Master 0 (Current 0) ' branchName
 
 branchName=${branchName:-0}
 
 if [ "$branchName" == 0 ]
 then 
-  gh repo view --web
+  hub browse
   exit
 fi
 
-hub browse
+gh repo view --web
 exit
 
 
