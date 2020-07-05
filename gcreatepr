@@ -56,6 +56,9 @@ nextPrId=$(( $lastPrId  + 1 ))
 
 hub pull-request hub pull-request -m "$nextPrId.$noDashedString $slectedEmoji" -d -a "$(git config user.name)" -l bug -M 'v1.beta'
 
+# Convert GitHub Issue to Pull request
+# https://jtway.co/convert-github-issue-to-pull-request-c624834835d8
+
 # gh pr create -t "$nextPrId.$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
 
 gh pr view --web
