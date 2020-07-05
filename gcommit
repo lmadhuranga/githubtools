@@ -58,9 +58,10 @@ printf " \n * * * Commit Message * * * \n \n "
 
 echo "msg :$msg"
 
-replacedText=$(source ./emojiReplacer.sh "$msg")
+replacedText=$(source emojiReplacer.sh "$msg")
 
 echo "replacedText :$replacedText"
+
 
 git commit -am "$slectedEmoji ${replacedText}"
 
