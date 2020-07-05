@@ -71,18 +71,29 @@ then
    git pull origin master
 fi
 
-git checkout -b $dashedString
+# **********************************************
+# Get next pr id
+lastPrLabel=$(gh pr list --state  "all" --limit 1) 
+ 
+read -ra strarr <<< "$lastPrLabel"
+
+lastPrId=${strarr[0]}
+nextPrId=$(( $lastPrId  + 1 ))
+
+branchName="$nextPrId.$dashedString"
+
+git checkout -b $branchName
 
 filename='Changelog.md' 
 printf " \n \n "
-echo "Linked $dashedString -> $(date) " >> $filename
+echo "Linked $branchName -> $(date) " >> $filename
 
 git add .
 
 git commit -am " :tada: init $slectedEmoji"
 
-git push origin $dashedString
+git push origin $branchName
 
-gh pr create -t "$str $slectedEmoji" -b "Linked :link: branch $dashedString"
+gh pr create -t "$nextPrId.$str $slectedEmoji" -b "Linked :link: branch $branchName" -a "$(git config user.name)"
 
 gh pr view --web

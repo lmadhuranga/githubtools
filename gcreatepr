@@ -44,6 +44,16 @@ noDashedString=$(sed "s/_/ /g" <<< $str)
 
 git push origin $currentBranch
 
-gh pr create -t "$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch"
+# **********************************************
+# Get next pr id
+lastPrLabel=$(gh pr list --state  "all" --limit 1) 
+ 
+read -ra strarr <<< "$lastPrLabel"
+
+lastPrId=${strarr[0]}
+
+nextPrId=$(( $lastPrId  + 1 ))
+
+gh pr create -t "$nextPrId.$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
 
 gh pr view --web

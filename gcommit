@@ -37,8 +37,7 @@ done
 read -p '(0 bug) :' emojiType
 
 # default value set 
-emojiType=${emojiType:-0} 
-
+emojiType=${emojiType:-0}
 
 slectedEmoji=${emjArr[$emojiType]}
 

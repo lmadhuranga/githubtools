@@ -1,1 +1,0 @@
-gh pr list --limit 1
