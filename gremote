@@ -1,1 +1,15 @@
+# read input
+read -p 'Master 0 (Current 0) ' branchName
+
+branchName=${branchName:-0}
+
+if [ "$branchName" == 0 ]
+then 
+  hub browse
+  exit
+fi
+
 gh repo view --web
+exit
+
+

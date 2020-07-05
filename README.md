@@ -11,4 +11,4 @@ https://gist.github.com/rxaviers/7360908
 
 Need to done 
 
-- all emoji to a single and read them from it
+- all emoji to a single and read them from it .

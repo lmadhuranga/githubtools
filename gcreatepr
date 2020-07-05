@@ -54,6 +54,8 @@ lastPrId=${strarr[0]}
 
 nextPrId=$(( $lastPrId  + 1 ))
 
-gh pr create -t "$nextPrId.$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
+hub pull-request hub pull-request -m "$nextPrId.$noDashedString $slectedEmoji" -d -a "$(git config user.name)" -l bug -M 'v1.beta'
+
+# gh pr create -t "$nextPrId.$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
 
 gh pr view --web
