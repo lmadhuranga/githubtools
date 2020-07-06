@@ -1,0 +1,7 @@
+printf "gcommit - commit with emoji \n"
+printf "gcreateb - create branch \n"
+printf "gitignore - copy .gitignore \n"
+printf "ginit - git init fie \n"
+printf "gmaster - swith to master and pull remote \n"
+printf "gremote - open in branch in web \n"
+printf "gcreatepr - create pr for current branch \n"
