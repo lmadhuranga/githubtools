@@ -102,12 +102,11 @@ milstone=${milstone:-0}
 
 if [ "$milstone" == 0 ]
 then 
-   hub pull-request -m "$nextPrId.$str $slectedEmoji" -d -a "$(git config user.name)" -l bug  
+   hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
 else
 
-   hub pull-request -m "$nextPrId.$str $slectedEmoji" -d -a "$(git config user.name)" -l bug -M $milstone
+   hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug -M $milstone
 fi 
-
-# gh pr create -t "$nextPrId.$str $slectedEmoji" -b "Linked :link: branch $branchName" -a "$(git config user.name)"
+ 
 
 gh pr view --web
