@@ -106,7 +106,6 @@ then
 else
 
    hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug -M $milstone
-fi 
- 
+fi
 
 gh pr view --web
