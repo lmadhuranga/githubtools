@@ -95,17 +95,19 @@ git commit -am " :tada: init $slectedEmoji"
 git push origin $branchName
 
 
-read -p 'Assign to milestone :type in here (0 no) :' milstone
+# read -p 'Assign to milestone :type in here (0 no) :' milstone
 
-# default value set 
-milstone=${milstone:-0} 
+# # default value set 
+# milstone=${milstone:-0} 
 
-if [ "$milstone" == 0 ]
-then 
-   hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
-else
+# if [ "$milstone" == 0 ]
+# then 
+#    hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
+# else
 
-   hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug -M $milstone
-fi
+#    hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug -M $milstone
+# fi
+
+hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
 
 gh pr view --web
