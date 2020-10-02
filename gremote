@@ -1,9 +1,9 @@
 # read input
-read -p 'Master 1 (Current 0) ' branchName
+read -p ' Current 0 (Master 1) ' branchName
 
 branchName=${branchName:-0}
 
-if [ "$branchName" == 0 ]
+if [ "$branchName" == 1 ]
 then 
   hub browse
   exit
