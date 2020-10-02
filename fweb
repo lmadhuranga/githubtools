@@ -1,1 +1,26 @@
-flutter run -d chrome
+# read input
+read -p ' web Enable 1 | Disable 2 | (Run in Web 0 ) ' actionNo
+
+actionNo=${actionNo:-0} 
+
+if [ "$actionNo" == 0 ]
+then 
+
+  flutter run -d chrome
+
+elif [ "$actionNo" == 1 ]
+then
+
+  flutter config --enable-web
+
+elif [ "$actionNo" == 2 ]
+then
+
+  flutter config --no-enable-web
+
+else  
+
+  exit
+
+fi
+
