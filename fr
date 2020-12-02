@@ -1,2 +1,2 @@
 adb devices
-flutter run
+flutter run --enable-software-rendering
