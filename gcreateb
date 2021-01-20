@@ -59,16 +59,16 @@ git stash
 
 printf " \n \n "
 
-read -p 'Create from branch current 1 (0 from master) :' fromBranch
+read -p 'Create from branch current 1 (0 from main) :' fromBranch
 
 # default value set 
 fromBranch=${fromBranch:-0} 
 
 if [ "$fromBranch" == 0 ]
 then 
-   git checkout master  
+   git checkout main  
 
-   git pull origin master
+   git pull origin main
 fi
 
 # **********************************************
