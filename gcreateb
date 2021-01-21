@@ -70,17 +70,8 @@ then
 
    git pull origin main
 fi
-
-# **********************************************
-# Get next pr id
-lastPrLabel=$(gh pr list --state  "all" --limit 1) 
- 
-read -ra strarr <<< "$lastPrLabel"
-
-lastPrId=${strarr[0]}
-nextPrId=$(( $lastPrId  + 1 ))
-
-branchName="$nextPrId.$dashedString"
+  
+branchName="$dashedString"
 
 git checkout -b $branchName
 
@@ -108,6 +99,6 @@ git push origin $branchName
 #    hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug -M $milstone
 # fi
 
-hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
+# hub pull-request -m "$nextPrId.$str $slectedEmoji" -a "$(git config user.name)" -l bug  
 
-gh pr view --web
+# gh pr view --web
