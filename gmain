@@ -1,0 +1,14 @@
+currentBranch=$(git branch --show-current)
+ 
+if [ "$currentBranch" != 'master' ]
+then
+
+  # git push origin $currentBranch
+
+  git checkout master
+
+fi
+
+git pull origin master
+
+git push origin master
