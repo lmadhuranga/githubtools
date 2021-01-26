@@ -1,0 +1,26 @@
+currentBranch=$(git branch --show-current)
+
+read -p " ! Merge to main <= $currentBranch  yes 1 ( no 0 ) : " type
+
+# default value set
+env=${type:-0}
+ 
+# production or test
+if [ "$type" == 1 ]
+then 
+  git push origin $currentBranch
+
+  git checkout main
+
+  git pull origin main 
+
+  git merge $currentBranch
+
+  git push origin main
+else
+  echo "Abort the merge and go to web and rebase from ther"
+  
+  gh pr view --web
+  
+  exit 
+fi
