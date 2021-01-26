@@ -1,1 +1,1 @@
-git branch
+git for-each-ref  for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
