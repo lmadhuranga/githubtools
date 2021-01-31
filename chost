@@ -13,8 +13,8 @@ then
    exit
 else
    printf " \n \n "
-   echo "set To http://$hostName/socialmedia/wp-admin"
-   mysql -u lmadhuranga --password=webkit@123 socialmedia -e "UPDATE wp_options SET option_value = 'http://$hostName/socialmedia' WHERE wp_options.option_id = 1; UPDATE wp_options SET option_value = 'http://$hostName/socialmedia' WHERE wp_options.option_id = 2;"
+   echo "set To $hostName/socialmedia/wp-admin"
+   mysql -u lmadhuranga --password=webkit@123 socialmedia -e "UPDATE wp_options SET option_value = '$hostName/socialmedia' WHERE wp_options.option_id = 1; UPDATE wp_options SET option_value = 'http://$hostName/socialmedia' WHERE wp_options.option_id = 2;"
    exit
 fi
 
