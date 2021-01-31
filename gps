@@ -1,1 +1,4 @@
-git push
+# Get current branch
+currentBranch=$(git branch --show-current)
+
+git push origin $currentBranch
