@@ -18,3 +18,4 @@ Need to done
   - milestone
 - Need to update feature list in read me file
 - Update example of commands
+- wordpress database change with paramter for database by chost
