@@ -1,0 +1,20 @@
+
+
+read -p 'Set host url (localhost): ' hostName
+
+hostName=${hostName:-0} 
+
+# Commit and push
+if [ "$hostName" == 0 ]
+then 
+   printf " \n \n "
+   echo "set To localhost"
+   mysql -u lmadhuranga --password=webkit@123 socialmedia -e "UPDATE wp_options SET option_value = 'http://localhost/socialmedia' WHERE wp_options.option_id = 1; UPDATE wp_options SET option_value = 'http://localhost/socialmedia' WHERE wp_options.option_id = 2;"
+   exit
+else
+   printf " \n \n "
+   echo "set To http://$hostName/socialmedia/wp-admin"
+   mysql -u lmadhuranga --password=webkit@123 socialmedia -e "UPDATE wp_options SET option_value = 'http://$hostName/socialmedia' WHERE wp_options.option_id = 1; UPDATE wp_options SET option_value = 'http://$hostName/socialmedia' WHERE wp_options.option_id = 2;"
+   exit
+fi
+
