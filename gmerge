@@ -1,7 +1,7 @@
 currentBranch=$(git branch --show-current)
 
 echo " 1.  ! Merge $currentBranch <= main   yes 1 "
-read -p "(0). ! Merge  $currentBranch  =>  main ( no 0 ) : " type
+read -p "(0). ! Merge $currentBranch  =>  main ( no 0 ) : " type
 
 # default value set
 env=${type:-0}
