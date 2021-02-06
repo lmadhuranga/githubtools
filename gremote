@@ -11,5 +11,3 @@ fi
 
 gh repo view --web
 exit
-
-

@@ -1,1 +1,1 @@
-gcommit && yarn deploy
+./buildProd

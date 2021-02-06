@@ -1,0 +1,88 @@
+# 0 : Commit Publish 
+# 1 : Publish only
+read -p 'Publish only 1 (Commit Publish 0) :' commitPublish
+
+commitPublish=${commitPublish:-0} 
+
+fileComment=0
+
+# Commit and push
+if [ "$commitPublish" == 0 ]
+then 
+
+  # get git commit message
+  read -p 'Git Message :' gitMsg
+
+  gitMsg=${gitMsg:-0}
+
+  fileComment=$gitMsg 
+
+  commitMSg=$gitMsg 
+  # if empty get added auto commit
+  if [ "$gitMsg" == 0 ]
+  then
+    commitMSg="Auto Commited"
+  fi  
+  echo "Git commited -> $commitMSg"
+  git add . && git commit -am "${commitMSg}"
+fi
+
+# Input from cmd 
+read -p 'test -> 1 or prod -> 0 : (0 prod) :' env
+
+# default value set
+env=${env:-0}
+
+# 0 :prod
+# 1 :test
+# production or test
+if [ "$env" == 0 ]
+then
+  env='prod'
+elif [ "$env" == 1 ]
+then
+  env='test'
+else
+  echo "${ env } <= wtf :( wrong env try again !"
+  exit
+fi
+
+printf '*\n' 
+printf '\n******************************************\n'
+
+# cat .env.$env
+cat src/environments/environment.$env.ts
+
+printf '\n******************************************\n'
+printf '*\n' 
+
+# bild the project
+# npm run-script build:$env
+
+./buildProd
+
+# if empty input get git last commit msg
+if [ "$fileComment" == 0 ]
+then
+  fileComment=$(git log -1 --pretty=%s)
+fi 
+
+# convert to space to dash
+dashedString=$(sed "s/ /_/g" <<< $fileComment)
+dashedString=$(sed "s/://g" <<< $dashedString)
+
+# get date
+dateTime=$(date +'%Y%m%d_%H%M')
+ 
+# concaenate and build convert to zip
+cd && start WinRAR.exe a -afzip "dialog-invest_${dateTime}_${env}_${dashedString}.zip" ./dist  *.* 
+
+cd ..
+
+echo "build file name is dialog-invest_${dateTime}_${env}_${dashedString}.zip"
+
+start .
+
+# mv build/"dialog-invest_${dateTime}_${env}_${dashedString}.zip" .
+
+exit
