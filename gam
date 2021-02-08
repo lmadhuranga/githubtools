@@ -1,3 +1,6 @@
+echo "- - - Last git msg - - -"
+git log -1 --pretty=%B
+
 # read input
 read -p 'Commit Msg: ' msg
 
@@ -7,5 +10,6 @@ then
   echo "Message is empty"
   exit
 else
+  echo "MSG => $msg"
   git commit --amend -m "$msg"
 fi
