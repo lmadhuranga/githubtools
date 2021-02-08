@@ -1,0 +1,11 @@
+# read input
+read -p 'Commit Msg: ' msg
+
+# Commit and push
+if [ "$msg" == "" ]
+then 
+  echo "Message is empty"
+  exit
+else
+  git commit --amend -m "$msg"
+fi
