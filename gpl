@@ -1,1 +1,2 @@
-git pull
+branch_name=(git branch --show-current)
+git pull origin $branch_name
