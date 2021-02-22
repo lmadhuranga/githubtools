@@ -55,7 +55,7 @@ then
 fi
 
 # convert to space to dash
-dashedString=$(sed "s/ /_/g" <<< $str)
+dashedString=$(sed "s/ /-/g" <<< $str)
 
 git stash 
 
