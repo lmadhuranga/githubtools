@@ -21,5 +21,13 @@ then
 else
   git commit 
 
-  git merge main
+  git push origin $currentBranch
+
+  git checkout main
+
+  git pull origin main 
+
+  git checkout $currentBranch
+
+  git merge main  
 fi
