@@ -1,2 +1,3 @@
 currentBranch=$(git branch --show-current)
+echo "- - - - - - - Pull from remote branch $currentBranch - - - - - - - "
 git pull origin $currentBranch 
