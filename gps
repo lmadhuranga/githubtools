@@ -1,4 +1,4 @@
 # Get current branch
 currentBranch=$(git branch --show-current)
-echo -e "\n^ ^ ^ ^ ^ ^ ^ PUSH to remote branch $currentBranch ^ ^ ^ ^ ^ ^ ^\n"
+echo -e "\n^  ^   ^  ^  PUSH to remote branch $currentBranch   ^  ^   ^  ^\n"
 git push origin $currentBranch
