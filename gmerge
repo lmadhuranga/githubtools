@@ -5,10 +5,11 @@ read -p "(0). ! Merge $currentBranch  <=  main ( no 0 ) : " type
 
 # default value set
 env=${type:-0}
- 
-# production or test
+  
 if [ "$type" == 1 ]
 then 
+  git pull  origin $currentBranch
+
   git push origin $currentBranch
 
   git checkout main
@@ -19,7 +20,9 @@ then
 
   git push origin main
 else
-  git commit 
+  git commit
+
+  git pull  origin $currentBranch
 
   git push origin $currentBranch
 
