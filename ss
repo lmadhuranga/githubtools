@@ -1,2 +1,2 @@
-echo "Start start application ./startApp"
+echo "Start application ./startApp"
 ./startApp
