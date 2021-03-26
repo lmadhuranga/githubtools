@@ -77,16 +77,15 @@ branchName="$dashedString"
 
 git checkout -b $branchName
 
-filename='Changelog.md' 
-printf " \n \n "
-echo "Linked $branchName -> $(date) " >> $filename
-
-git add .
-
-git commit -am " :tada: init $slectedEmoji"
-
 git push origin $branchName
 
+# filename='Changelog.md' 
+# printf " \n \n "
+# echo "Linked $branchName -> $(date) " >> $filename
+
+# git add .
+
+# git commit -am " :tada: init $slectedEmoji"
 
 # read -p 'Assign to milestone :type in here (0 no) :' milstone
 
