@@ -1,2 +1,2 @@
-echo "Production bbp \n Dev  bb"
+echo "Production bbp /n Dev  bb"
 yarn prod
