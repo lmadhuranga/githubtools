@@ -67,3 +67,25 @@ function cusb(){
 function cuss(){
         source  ~/.custom_bash_commands.sh
 }
+
+function pp() {
+        git pull
+}
+
+function ppp() {
+        currentBranch=$(git branch --show-current)
+        echo -e "\n^  ^   ^  ^  PUSH to remote branch $currentBranch   ^  ^   ^  ^\n"
+        git push origin $currentBranch
+}
+
+function sw() {
+        git checkout $1
+}
+
+function cusb(){
+        vi ~/.custom_bash_commands.sh
+}
+
+function cuss(){
+        source  ~/.custom_bash_commands.sh
+}
