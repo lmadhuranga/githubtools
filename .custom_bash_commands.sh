@@ -44,11 +44,7 @@ function gb() {
 
 function gbr() {
         git branch -a 
-}
-
-function gba() {
-        git branch -a
-}
+} 
 
 function pp() {
         git pull
