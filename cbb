@@ -1,3 +1,5 @@
 # convert to space to dash
-dashedString=$(sed "s/ /-/g" <<< $1)
+str="'$*'"
+dashedString=$(sed "s/ /-/g" <<< "$str")
 git checkout -b $dashedString
+ppp
