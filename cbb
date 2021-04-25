@@ -1,0 +1,3 @@
+# convert to space to dash
+dashedString=$(sed "s/ /-/g" <<< $1)
+git checkout -b $dashedString
