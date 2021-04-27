@@ -1,4 +1,5 @@
 # githubtools
+Need a help to convert to Mac and linux
 
 Helping to developers to help to easy for commit to git 
 
