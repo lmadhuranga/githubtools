@@ -16,7 +16,7 @@ function cc() {
 }
 
 function mm() {
-         git add . && git commit -am "$1" && git push 
+         git add . && git commit -am "$*" && git push 
 }
 
 
