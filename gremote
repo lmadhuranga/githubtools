@@ -1,13 +1,39 @@
 # read input
-read -p ' Current 0 (Master 1) ' branchName
+# - read -p ' Current 0 (Master 1) ' branchName
+# -  
+# -  branchName=${branchName:-0}
+# -  
+# -  if [ "$branchName" == 1 ]
+# -  then 
+# -    hub browse
+# -    exit
+# -  fi
+# -  
+# -  gh repo view --web
+# -  exit
 
-branchName=${branchName:-0}
+# git@github.com:lmadhuranga/githubtools.git
+currentRepo=$(git config --get remote.origin.url) 
+# echo $currentRepo
 
-if [ "$branchName" == 1 ]
-then 
-  hub browse
-  exit
-fi
+# lmadhuranga/githubtools.git
+currentRepo=${currentRepo//"git@github.com:"/""}
 
-gh repo view --web
-exit
+# echo $currentRepo
+
+# lmadhuranga/githubtools
+currentRepo=${currentRepo//".git"/""}
+
+# echo $currentRepo
+
+currentBranch=$(git branch --show-current)
+
+gitUrl="https://github.com/$currentRepo/tree/$currentBranch" 
+
+prLink="https://github.com/$currentRepo/compare/$currentBranch" 
+
+echo "Branch => $gitUrl"
+echo "Pr     => $prLink"
+
+
+
