@@ -28,12 +28,17 @@ currentRepo=${currentRepo//".git"/""}
 
 currentBranch=$(git branch --show-current)
 
-gitUrl="https://github.com/$currentRepo/tree/$currentBranch" 
+repourl="https://github.com/$currentRepo"
 
-prLink="https://github.com/$currentRepo/compare/$currentBranch" 
+gitUrl="$repourl/tree/$currentBranch" 
 
-echo "Branch => $gitUrl"
-echo "Pr     => $prLink"
+prLink="$repourl/compare/$currentBranch" 
+
+projectUrl="$repourl/projects/1?fullscreen=true" 
+
+echo "Branch     => $gitUrl"
+echo "projectUrl => $projectUrl"
+echo "Pr         => $prLink"
 
 
 
