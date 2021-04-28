@@ -57,6 +57,9 @@ fi
 # convert to space to dash
 dashedString=$(sed "s/ /-/g" <<< $str)
 
+# convert to lower case
+lowercaseStr=${dashedString,,}
+
 git stash 
 
 printf " \n \n "
@@ -73,7 +76,7 @@ then
    git pull origin main
 fi
   
-branchName="$dashedString"
+branchName="$lowercaseStr"
 
 git checkout -b $branchName
 

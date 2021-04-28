@@ -1,5 +1,9 @@
 # convert to space to dash
 str="$*"
 dashedString=$(sed "s/ /-/g" <<< "$str")
-git checkout -b $dashedString
+
+# convert to lower case
+lowercaseStr=${dashedString,,}
+
+git checkout -b $lowercaseStr
 ppp
