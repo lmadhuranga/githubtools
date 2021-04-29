@@ -24,9 +24,12 @@ currentRepo=${currentRepo//"git@github.com:"/""}
 # lmadhuranga/githubtools
 currentRepo=${currentRepo//".git"/""}
 
-# echo $currentRepo
+
 
 currentBranch=$(git branch --show-current)
+
+# Get Tiket id  
+ticketId=$(echo $currentBranch | cut -d "." -f 1) 
 
 repourl="https://github.com/$currentRepo"
 
@@ -36,9 +39,9 @@ prLink="$repourl/compare/$currentBranch"
 
 projectUrl="$repourl/projects/1?fullscreen=true" 
 
+ticketUrl="$repourl/issues/$ticketId" 
+
 echo "Branch     => $gitUrl"
 echo "projectUrl => $projectUrl"
 echo "Pr         => $prLink"
-
-
-
+echo "ticketUrl  => $ticketUrl"
