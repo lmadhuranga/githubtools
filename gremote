@@ -41,7 +41,7 @@ projectUrl="$repourl/projects/1?fullscreen=true"
 
 ticketUrl="$repourl/issues/$ticketId" 
 
-echo "Branch     => $gitUrl"
 echo "projectUrl => $projectUrl"
-echo "Pr         => $prLink"
+echo "Branch     => $gitUrl"
+# echo "Pr         => $prLink"
 echo "ticketUrl  => $ticketUrl"
