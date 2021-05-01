@@ -1,5 +1,9 @@
 # convert to space to dash
 str="$*"
+
+# remove duplicate spaces
+str=${str##*( )}
+
 dashedString=$(sed "s/ /-/g" <<< "$str")
 
 # convert to lower case
