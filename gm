@@ -1,1 +1,14 @@
-gmerge
+currentBranch=$(git branch --show-current)
+ 
+if [ "$currentBranch" != 'main' ]
+then
+
+  # git push origin $currentBranch
+
+  git checkout main
+
+fi
+
+git pull origin main
+
+git push origin main
