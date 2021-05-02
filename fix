@@ -16,5 +16,6 @@ eStr=""
 for i in "${!emjArr[@]}"; do
    eStr="$eStr   ${emjArr[$i]}";
 done
+1.🐛 2.🔥 3.🌋 4.🔨 5.✔️ 6.📌 7.📝 8.💡 9.⭐ 10.☁️ 11.👻
 
 echo "msg :$eStr"
