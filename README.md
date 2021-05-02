@@ -20,3 +20,6 @@ Need to done
 - Need to update feature list in read me file
 - Update example of commands
 - wordpress database change with paramter for database by chost
+
+A random emoji in your terminal prompt. How and Why
+https://loige.co/random-emoji-in-your-prompt-how-and-why/

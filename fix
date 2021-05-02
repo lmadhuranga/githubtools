@@ -1,0 +1,20 @@
+ emjArr=(
+  '1.🐛'           #b 🐛 :bug:
+  '2.🔥'            #f 🔥 :fire:
+  '3.🌋'           #v 🌋 :volcano:
+  '4.🔨'           #h 🔨 :hammer:
+  '5.✔️'           #c ✔️ :heavy_check_mark:
+  '6.📌'           #p 📌 :pushpin:
+  '7.📝'           #n 📝 :pencil:
+  '8.💡'            #b 💡 :bulb:
+  '9.⭐'           #s ⭐ :star:
+  '10.☁️'           #c ☁️ :cloud:
+  '11.👻'           #g 👻 :ghost:
+ )
+  
+eStr=""
+for i in "${!emjArr[@]}"; do
+   eStr="$eStr   ${emjArr[$i]}";
+done
+
+echo "msg :$eStr"
