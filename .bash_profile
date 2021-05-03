@@ -2,22 +2,22 @@
 #https://loige.co/random-emoji-in-your-prompt-how-and-why/
 
 # declares an array with the emojis we want to support
-EMOJIS=(b🐛 🔥 🌋 🔨 ✔️ 📌 📝 💡 ⭐ ☁️ 👻 ⚡)
+# EMOJIS=(b🐛 🔥 🌋 🔨 ✔️ 📌 📝 💡 ⭐ ☁️ 👻 ⚡)
 
-EMOJISSTR='b.🐛  f.🔥  v.🌋  h.🔨  c.✔️  p.📌  n.📝  b.💡  s.⭐  k.☁️   g.👻  l.⚡'
+# EMOJISSTR='b.🐛  f.🔥  v.🌋  h.🔨  c.✔️  p.📌  n.📝  b.💡  s.⭐  k.☁️   g.👻  l.⚡'
 
-# selects a random element from the EMOJIS set
-SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
+# # selects a random element from the EMOJIS set
+# SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
 
-gitCurntBranch=$(git rev-parse --abbrev-ref HEAD)
+# gitCurntBranch=$(git rev-parse --abbrev-ref HEAD)
 
-s="⚡" 
-if [ "\$" == "#" ]
-then 
-  s="#" exit
-fi
+# s="⚡" 
+# if [ "\$" == "#" ]
+# then 
+#   s="#" exit
+# fi
  
-export alias og='ls -ogrt
+# export alias og='ls -ogrt
 
-# declare the terminal prompt format
-export PS1='\n\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[39m\@ $s ' 
+# # declare the terminal prompt format
+# export PS1='\n\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[32m\@ \033[0m$s ' 
