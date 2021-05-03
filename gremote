@@ -41,7 +41,7 @@ projectUrl="$repourl/projects/1?fullscreen=true"
 
 ticketUrl="$repourl/issues/$ticketId" 
 
-echo -e "\033[35mprojectUrl => $projectUrl \033[0m\n"
-echo -e "\033[34mBranch     => $gitUrl \033[0m"
-echo -e "\033[33mPr         => $prLink \033[0m"
-echo -e "ticketUrl  => $ticketUrl \033[0m"
+echo -e "\033[35mprojectUrl => \033[0m$projectUrl\n"
+echo -e "\033[34mBranch     => \033[0m$gitUrl"
+echo -e "\033[33mPr         => \033[0m$prLink"
+echo -e "\033[32mticketUrl  => \033[0m$ticketUrl "
