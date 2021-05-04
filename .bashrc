@@ -7,6 +7,7 @@ alias cbs='source ~/.bashrc'
 alias cbec='code ~/.bashrc'
 alias cbe='vi ~/.bashrc'
 alias cbcp='cp .bashrc  ~/.bashrc'
+alias cbcps='cbcp && cbs'
 alias og='ls -ogrt'
 alias ll='ls -al'
 alias lc='ls -C'
@@ -36,8 +37,11 @@ then
   s="#" exit
 fi
 
+dated=$(date '+%A')
+dateTime="${dated:0:3} $(date '+%d %H:%M')"
+
 # declare the terminal prompt format
-export PS1='\033[0m\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[32m\@\033[0m $s '
+export PS1='\033[0m\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[32m$dateTime\033[0m $s '
 
 # todo : need to add end of code add new line
 # function cleancmd() {

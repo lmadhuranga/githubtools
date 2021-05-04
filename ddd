@@ -1,0 +1,2 @@
+dated=$(date '+%A')
+echo "${dated:0:3} $(date '+%d %H:%M')"
