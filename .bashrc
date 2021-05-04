@@ -41,7 +41,7 @@ dated=$(date '+%A')
 dateTime="${dated:0:3} $(date '+%d %H:%M')"
 
 # declare the terminal prompt format
-export PS1='\033[32m$dateTime\033[0m\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[0m $s '
+export PS1='\033[32m$dateTime\033[0m\n$EMOJISSTR\n\033[33m\w\033[36m (${gitCurntBranch})\n\033[0m$s '
 
 # todo : need to add end of code add new line
 # function cleancmd() {

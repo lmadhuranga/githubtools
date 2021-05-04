@@ -1,42 +1,3 @@
-# emojiType of commit
-emjArr=(
-   [0]=':bug:'
-   [1]=':bulb:'
-   [2]=':hammer:'
-   [3]=':moneybag:'
-   [4]=':star:'
-   [5]=':fire:'
-   [6]=':cloud:'
-   [7]=':snowflake:'
-   [8]=':volcano:'
-   [9]=':heavy_check_mark:'
-   [10]=':ghost:'
-   [11]=':pushpin:'
-   ['bug']=':bug:'
-   ['idea']=':bulb:'
-   ['fix']=':hammer:'
-   ['mondy']=':moneybag:'
-   ['star']=':star:'
-   ['fire']=':fire:'
-   ['cloud']=':cloud:'
-   ['snow']=':snowflake:'
-   ['volcano']=':volcano:'
-   ['check']=':heavy_check_mark:'
-   ['ghost']=':ghost:'
-   ['pin']=':pushpin:'
-)
-
-for i in "${!emjArr[@]}"; do
-   echo "$i  ${emjArr[$i]}";
-done
-
-read -p '(0 bug) :' emojiType
-
-# default value set 
-emojiType=${emojiType:-0} 
-
-slectedEmoji=${emjArr[$emojiType]}
-
 currentBranch=$(git branch --show-current)
 
 # convert to space to dash
@@ -44,21 +5,12 @@ noDashedString=$(sed "s/_/ /g" <<< $currentBranch)
 
 git push origin $currentBranch
 
-# **********************************************
-# Get next pr id
-lastPrLabel=$(gh pr list --state  "all" --limit 1) 
  
-read -ra strarr <<< "$lastPrLabel"
-
-lastPrId=${strarr[0]}
-
-nextPrId=$(( $lastPrId  + 1 ))
-
-hub pull-request hub pull-request -m "$nextPrId.$noDashedString $slectedEmoji" -d -a "$(git config user.name)" -l bug -M 'v1.beta'
+gh pr create -m "1.Initial_release" -a "@me" -l "bug" -t "$noDashedString" -b "Linked #$currentBranch"
 
 # Convert GitHub Issue to Pull request
 # https://jtway.co/convert-github-issue-to-pull-request-c624834835d8
 
-# gh pr create -t "$nextPrId.$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
+# gh pr create -t "$noDashedString $slectedEmoji" -b "Linked :link: branch $currentBranch" -a "$(git config user.name)"
 
 gh pr view --web
