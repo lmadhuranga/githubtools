@@ -1,0 +1,2 @@
+title="$*"
+gh issue create -t  "$title"  -b "" -l bug -m "1.Initial_release" -a "@me" -p "React_Platinumhashtag_Dashboard" -w 
