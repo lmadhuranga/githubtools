@@ -1,1 +1,1 @@
-deploy --only functions,hosting 
+firebase deploy --only functions,hosting 
